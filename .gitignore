@@ -1,0 +1,5 @@
+.zig-cache
+tmp
+.idea
+.vscode
+.zed
