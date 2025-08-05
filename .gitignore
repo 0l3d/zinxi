@@ -3,3 +3,6 @@ tmp
 .idea
 .vscode
 .zed
+.temp
+zig-out
+test
