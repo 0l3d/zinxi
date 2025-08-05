@@ -1,4 +1,8 @@
-// Created By 0l3d
+/* GPUInfo
+ *
+ *  DEPS: opencl
+ *  Created by 0l3d
+ */
 #include "gpu.h"
 #include <stdlib.h>
 #include <string.h>

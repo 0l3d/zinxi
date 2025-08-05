@@ -1,4 +1,8 @@
-// Created By 0l3d
+/* CPU info
+ *
+ *  DEPS: cpuid
+ *  Created by 0l3d
+ */
 #include "cpu.h"
 #include <libcpuid/libcpuid.h>
 #include <stdlib.h>
