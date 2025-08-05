@@ -65,6 +65,23 @@ pub fn build(b: *std.Build) void {
         .root_module = exe_mod,
     });
 
+    exe.addCSourceFiles(.{
+        .files = &.{
+            "src/c/cpu.c",
+            "src/c/gpu.c",
+            "src/c/pci.c",
+        },
+        .flags = &.{}, // no extra flags needed
+    });
+
+    exe.addIncludePath(b.path("src/c"));
+
+    exe.linkSystemLibrary("pci");
+    exe.linkSystemLibrary("cpuid");
+    exe.linkSystemLibrary("OpenCL"); // optional; will fail if not installed
+
+    exe.linkLibC(); // stdlib
+
     // This declares intent for the executable to be installed into the
     // standard location when the user invokes the "install" step (the default
     // step when running `zig build`).
