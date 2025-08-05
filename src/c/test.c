@@ -3,11 +3,17 @@
  * -lpci -lcpuid -lOpenCL
  * Example Test: gcc cpu.c gpu.c pci.c test.c -o test -lpci -lcpuid -lOpenCL
  *
+ *  For Void Linux:
+ *  OpenCL-Headers
+ *  libcpuid-devel
+ *  libpciacces-devel
+ *
  * Created by 0l3d
  */
 #include "cpu.h"
 #include "gpu.h"
 #include "pci.h"
+#include "system.h"
 
 #include <stdio.h>
 int main(int argc, char **argv) {
@@ -33,6 +39,23 @@ int main(int argc, char **argv) {
   PCIInfo pci;
   get_pci_info_full(&pci);
   printf("PCI SUBSYSVENDOR: %s\n", pci.subvendor);
+
+  // linux
+  SystemInfo info;
+  get_system_info(&info);
+
+  printf("sysname: %s\n", info.sysname);
+  printf("nodename: %s\n", info.nodename);
+  printf("release: %s\n", info.release);
+  printf("version: %s\n", info.version);
+  printf("machine: %s\n", info.machine);
+
+  printf("compiler_name: %s\n", info.compiler_name);
+
+  printf("clc_current: %s\n", info.clc_current);
+  printf("clc_avail: %s\n", info.clc_avail);
+
+  printf("params: %s\n", info.params);
 
   return 0;
 }

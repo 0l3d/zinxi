@@ -1,4 +1,8 @@
-// Created By 0l3d
+/* GPUInfo
+ *
+ *  DEPS: opencl
+ *  Created by 0l3d
+ */
 #ifndef GPU_H
 #define GPU_H
 #define CL_TARGET_OPENCL_VERSION 300

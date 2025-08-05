@@ -1,4 +1,8 @@
-// Created By 0l3d
+/* PCI Info
+ *
+ *  DEPS: pciacces / pciutil
+ *  Created by 0l3d
+ */
 #include "pci.h"
 #include <pci/pci.h>
 #include <string.h>

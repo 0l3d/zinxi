@@ -1,4 +1,8 @@
-// Created By 0l3d
+/* CPU info
+ *
+ *  DEPS: cpuid
+ *  Created by 0l3d
+ */
 #ifndef CPU_H
 #define CPU_H
 
