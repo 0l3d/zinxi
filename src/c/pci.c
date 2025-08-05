@@ -27,11 +27,16 @@ int get_pci_info_full(PCIInfo *info) {
         break;
       case 0x8086: // Intel
         pci_lookup_name(pacc, info->vendor, sizeof(info->vendor),
-                        PCI_LOOKUP_DEVICE, dev->vendor_id, dev->vendor_id);
+                        PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
+        pci_lookup_name(pacc, info->subvendor, sizeof(info->subvendor),
+                        PCI_LOOKUP_VENDOR, dev->subsys_vendor_id);
+
         break;
       case 0x1002: // AMD / ATI
         pci_lookup_name(pacc, info->vendor, sizeof(info->vendor),
                         PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
+        pci_lookup_name(pacc, info->subvendor, sizeof(info->subvendor),
+                        PCI_LOOKUP_VENDOR, dev->subsys_vendor_id);
         break;
       default:
         info->id = dev->vendor_id;
