@@ -66,11 +66,7 @@ pub fn build(b: *std.Build) void {
     });
 
     exe.addCSourceFiles(.{
-        .files = &.{
-            "src/c/cpu.c",
-            "src/c/gpu.c",
-            "src/c/pci.c",
-        },
+        .files = &.{ "src/c/cpu.c", "src/c/gpu.c", "src/c/pci.c", "src/c/system.c" },
         .flags = &.{}, // no extra flags needed
     });
 

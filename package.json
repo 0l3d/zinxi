@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "zig build",
-    "cbuild": "gcc src/c/cpu.c src/c/gpu.c src/c/pci.c src/c/test.c -o test -lpci -lcpuid -lOpenCL",
+    "cbuild": "gcc src/c/*.c -o test  -o test -lpci -lcpuid -lOpenCL",
     "test": "bun --bun run build && ./zig-out/bin/zinxi",
     "ctest": "bun --bun run cbuild && ./test",
     "dev": "bun --bun watcher.js",
